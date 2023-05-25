@@ -1,0 +1,13 @@
+.content {
+    padding: 5%;
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.content div {
+    margin: auto;
+    flex-basis: auto;
+    border: 1px solid grey;
+}
