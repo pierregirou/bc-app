@@ -8,10 +8,9 @@
 
 <div>
     <h2>Rendu :</h2>
-    <div [innerHTML]="data"></div>
+    <div [innerHTML]="data | safeHtml"></div>
     <h2>Rendu  format HTML:</h2>
     <div>
         <textarea type="textarea" name="" id="" [(ngModel)]="data"></textarea>
     </div>
-    {{data }}
 </div>

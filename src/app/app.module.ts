@@ -13,6 +13,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { TemplateComponent } from './template/template.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormsModule } from '@angular/forms';
+import { SafeHtmlPipe } from './pipe/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     SearchComponent,
     SidenavComponent,
-    TemplateComponent
+    TemplateComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,

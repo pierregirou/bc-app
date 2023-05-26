@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
