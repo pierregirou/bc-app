@@ -1,0 +1,18 @@
+.sideNavList .itemList {
+    width: auto;
+    margin: 20px;
+    padding: 1%;
+    color: #fff;
+}
+
+.sideNavList .itemList a {
+    color: #fffdfd;
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.itemListActive {
+    text-decoration: underline;
+    transition: all 0.4s ease-in-out;
+}

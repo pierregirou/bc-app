@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.container .sideNavList {
+    width: 20%;
+    height: 100vh;
+    background-color: #444;
+    font-size: large;
+    padding: 2%
+}
+
+.container .component {
+    width: 100%;
+    height: 100vh;
+    padding: 2%;
+    background-color: whitesmoke;
+}
