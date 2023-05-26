@@ -1,6 +1,5 @@
 .search-container {
     width: inherit;
-    background-color: #333;
     display: block;
     justify-content: center;
     align-items: center;
@@ -14,4 +13,8 @@
 .search-container input#inputSearch {
     position: relative;
     width: 100%;
+}
+
+.mat-mdc-form-field{
+  display: block;
 }

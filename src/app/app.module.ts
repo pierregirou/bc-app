@@ -14,6 +14,9 @@ import { TemplateComponent } from './template/template.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormsModule } from '@angular/forms';
 import { SafeHtmlPipe } from './pipe/safe-html.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { FormControl } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,10 @@ import { SafeHtmlPipe } from './pipe/safe-html.pipe';
   imports: [
     BrowserModule,
     FormsModule,
+    MaterialModule,
     AppRoutingModule,
     CKEditorModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

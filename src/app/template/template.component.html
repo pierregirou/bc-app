@@ -1,16 +1,75 @@
-<h1>template page</h1>
+<h1>Template page</h1>
 
-<div class="ckeditor">
-    <ckeditor [editor]="Editor" [(ngModel)]="data"></ckeditor>
+
+<div class="add-template" (click)="openTemplate()">
+  <div class="circle">
+    <button mat-fab color="primary" aria-label="Example icon button with a bookmark icon">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <p>Ajouter un template</p>
 </div>
-    
 
-
-<div>
-    <h2>Rendu :</h2>
-    <div [innerHTML]="data | safeHtml"></div>
-    <h2>Rendu  format HTML:</h2>
-    <div>
-        <textarea type="textarea" name="" id="" [(ngModel)]="data"></textarea>
+<div class="ckeditor" [hidden]="visibility">
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="section">
+      <mat-form-field class="example-form-field">
+        <mat-label>Titre de ma connaissance</mat-label>
+        <input matInput ngModel type="text" name="title" id="title" >
+      </mat-form-field>
     </div>
+    <ckeditor [editor]="Editor" [(ngModel)]="data" name="content" id="content"></ckeditor>
+    <div class="section">
+      <mat-form-field class="example-full-width">
+        <mat-label>Ajouter un commentaire </mat-label>
+        <textarea matInput type="textarea" ngModel name="comment" id="comment"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="example-button-row section">
+      <button type="submit" mat-raised-button color="primary"><mat-icon>done</mat-icon> Enregistrer</button>
+    </div>
+  </form>
+    <div>
+      <div [innerHTML]="data | safeHtml"></div>
+      <h2>Rendu  format HTML:</h2>
+      <div>
+        <mat-form-field class="example-full-width">
+          <textarea matInput type="textarea" name="" id="" [(ngModel)]="data"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+
+  <mat-divider></mat-divider>
+<div>
+  <h1>Mes Templates</h1>
 </div>
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let template of arrayTemplate">
+    <mat-expansion-panel-header>
+      <mat-panel-title>#{{template.id}}</mat-panel-title>
+      <mat-panel-description>{{template.title}}</mat-panel-description>
+    </mat-expansion-panel-header>
+
+      <mat-form-field class="example-form-field">
+        <mat-label>Titre de ma connaissance</mat-label>
+        <input matInput [(ngModel)]="template.title" type="text" name="title" id="title" >
+      </mat-form-field>
+
+      <ckeditor [editor]="Editor" [(ngModel)]="template.template" name="content" id="content"></ckeditor>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput type="textarea" [(ngModel)]="template.comment" name="comment" id="comment"></textarea>
+      </mat-form-field>
+
+      <div class="example-button-row section">
+        <button type="submit" mat-raised-button color="accent"><mat-icon>edit</mat-icon>Modifier</button>
+      </div>
+
+      <div class="example-button-row section">
+        <button type="submit" mat-raised-button color="warn"><mat-icon>delete</mat-icon>Supprimer</button>
+      </div>
+
+  </mat-expansion-panel>
+</mat-accordion>
