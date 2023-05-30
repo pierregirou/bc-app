@@ -29,9 +29,9 @@ export class FormtemplateComponent implements OnInit{
         id: this.arrayTemplate.length+1,
         template:myForm.value.content,
         title:myForm.value.title,
-        mode:0,
         comment:myForm.value.comment
       })
+      this.router.navigate(['template'])
   }
 
   annuleSaisie(){

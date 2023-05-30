@@ -20,15 +20,15 @@
   <div class="example-button-row section">
       <button class="btn-delete" mat-raised-button color="warn" (click)="annuleSaisie()"><mat-icon>remove</mat-icon> Annuler</button>
   </div>
-      <div>
+      <!-- <div>
         <div [innerHTML]="template.comment | safeHtml"></div>
         <h2>Rendu  format HTML:</h2>
         <div>
           <mat-form-field class="example-full-width">
-            <textarea matInput type="textarea" name="" id="" [(ngModel)]="template.content"></textarea>
+            <textarea matInput type="textarea" name="" id="" [(ngModel)]="template.template"></textarea>
           </mat-form-field>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="ckeditor" *ngIf="!template">
