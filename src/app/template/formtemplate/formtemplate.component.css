@@ -1,0 +1,11 @@
+.mat-mdc-form-field{
+    display: block;
+  }
+  
+  .section{
+    margin: 10px 0;
+  }
+  
+  button[type="submit"], .btn-delete, .btn-edit, .btn-valid{
+    width: 100%;
+  }

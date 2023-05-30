@@ -13,10 +13,10 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { TemplateComponent } from './template/template.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormsModule } from '@angular/forms';
-import { SafeHtmlPipe } from './pipe/safe-html.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormControl } from '@angular/forms';
+import { TemplateModule } from './template/template.module';
 
 @NgModule({
   declarations: [
@@ -29,12 +29,12 @@ import { FormControl } from '@angular/forms';
     SearchComponent,
     SidenavComponent,
     TemplateComponent,
-    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     MaterialModule,
+    FormsModule,
+    TemplateModule,
     AppRoutingModule,
     CKEditorModule,
     BrowserAnimationsModule,

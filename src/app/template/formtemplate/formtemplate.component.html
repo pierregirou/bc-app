@@ -1,0 +1,36 @@
+<div class="ckeditor" *ngIf="template">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+      <div class="section">
+        <mat-form-field class="example-form-field">
+          <mat-label>Titre de ma connaissance</mat-label>
+          <input matInput [(ngModel)]="template.title" type="text" name="title" id="title" >
+        </mat-form-field>
+      </div>
+      <ckeditor [editor]="Editor" [(ngModel)]="template.template" name="content" id="content"></ckeditor>
+      <div class="section">
+        <mat-form-field class="example-full-width">
+          <mat-label>Ajouter un commentaire </mat-label>
+          <textarea matInput type="textarea" [(ngModel)]="template.comment" name="comment" id="comment"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="example-button-row section">
+        <button type="submit" mat-raised-button color="primary"><mat-icon>done</mat-icon> Enregistrer</button>
+      </div>
+  </form>
+  <div class="example-button-row section">
+      <button class="btn-delete" mat-raised-button color="warn" (click)="annuleSaisie()"><mat-icon>remove</mat-icon> Annuler</button>
+  </div>
+      <div>
+        <div [innerHTML]="template.comment | safeHtml"></div>
+        <h2>Rendu  format HTML:</h2>
+        <div>
+          <mat-form-field class="example-full-width">
+            <textarea matInput type="textarea" name="" id="" [(ngModel)]="template.content"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="ckeditor" *ngIf="!template">
+        <p>Erreur pas de template correspondant !</p>
+    </div>
